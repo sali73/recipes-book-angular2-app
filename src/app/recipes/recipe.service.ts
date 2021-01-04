@@ -33,10 +33,16 @@ export class RecipeService{
     
       ]
 
-      constructor( private slService: ShoppingListService ){}
+    constructor( private slService: ShoppingListService ){}
+
     getRecipe(){
         return this.Recipes.slice()
     }
+
+    getRecipeById(id:number){
+      return this.Recipes[id]
+  }
+    
     addIngredientsToShoppingList( ingredients: Ingredient[]){
       this.slService.addIngredient(ingredients)
 
